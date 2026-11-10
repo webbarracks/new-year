@@ -899,7 +899,17 @@
       display: grid;
       place-items: center;
       margin-bottom: 1.25rem;
-      font-size: 1.5rem;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .card-icon-box svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+
+    .standard-card:hover .card-icon-box {
+      transform: scale(1.08);
     }
 
     .icon-amber {
@@ -1189,7 +1199,13 @@
         <!-- Controls & Links -->
         <div class="nav-actions">
           <button type="button" class="control-pill" id="sound-toggle-btn" title="Toggle realistic crackle sound">
-            <span id="sound-icon">🔈</span>
+            <span id="sound-icon" style="display:inline-flex;align-items:center;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <line x1="23" y1="9" x2="17" y2="15"></line>
+                <line x1="17" y1="9" x2="23" y2="15"></line>
+              </svg>
+            </span>
             <span id="sound-label">Sound Off</span>
           </button>
           <a href="https://www.webbarracks.com/" target="_blank" rel="noopener" class="btn-main-site">
@@ -1204,7 +1220,12 @@
       <section class="hero-section">
         <!-- Floating Diya & Auspicious Badge -->
         <div class="hero-badge-wrap">
-          <span class="hero-badge-diya">🪔</span>
+          <span class="hero-badge-diya">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+              <path d="M12 2c-.6 2.4-2.2 4.3-2.2 6.3a4.2 4.2 0 0 0 8.4 0c0-2-1.6-3.9-2.2-6.3-.5 1-1.3 1.8-2 1.8s-1.5-.8-2-1.8z" fill="#f59e0b" stroke="#d97706" stroke-width="1.5" />
+              <path d="M3 13.5c1.8 5.2 5.6 7 9 7s7.2-1.8 9-7H3z" fill="rgba(245, 158, 11, 0.3)" stroke="#d97706" />
+            </svg>
+          </span>
           <span class="hero-badge-text">શુભ બેસતું વર્ષ • KARTAK SUD 1, 2081</span>
         </div>
 
@@ -1225,13 +1246,27 @@
           From the engineering team at <span class="highlight-text">Web Barracks</span>, we wish you zero downtime, scalable triumphs, and ground-breaking milestones in all your ventures!
         </p>
 
-        <!-- Hero Actions (Launch Crackles button removed as requested) -->
+        <!-- Hero Actions -->
         <div class="hero-actions">
           <a href="#personalize" class="btn btn-cta-gold">
-            <span>🎁 Personalize Wish</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 12 20 22 4 22 4 12" />
+              <rect x="2" y="7" width="20" height="5" />
+              <line x1="12" y1="22" x2="12" y2="7" />
+              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />
+              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
+            </svg>
+            <span>Personalize Wish</span>
           </a>
           <button type="button" class="btn btn-glass" id="btn-share-hero">
-            <span>📲 Share Greeting</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3" />
+              <circle cx="6" cy="12" r="3" />
+              <circle cx="18" cy="19" r="3" />
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+            </svg>
+            <span>Share Greeting</span>
           </button>
           <a href="https://www.webbarracks.com/" target="_blank" rel="noopener" class="btn btn-crackles-trigger">
             <span>Visit Web Barracks ↗</span>
@@ -1247,7 +1282,17 @@
             </div>
 
             <div class="gujarati-verse-box">
-              <div class="verse-ornament">🪔 ૐ 🪔</div>
+              <div class="verse-ornament">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;">
+                  <path d="M12 2c-.6 2.4-2.2 4.3-2.2 6.3a4.2 4.2 0 0 0 8.4 0c0-2-1.6-3.9-2.2-6.3-.5 1-1.3 1.8-2 1.8s-1.5-.8-2-1.8z" fill="#f59e0b" stroke="#d97706" />
+                  <path d="M3 13.5c1.8 5.2 5.6 7 9 7s7.2-1.8 9-7H3z" fill="rgba(245, 158, 11, 0.3)" stroke="#d97706" />
+                </svg>
+                <span>શુભ નૂતન વર્ષ</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;">
+                  <path d="M12 2c-.6 2.4-2.2 4.3-2.2 6.3a4.2 4.2 0 0 0 8.4 0c0-2-1.6-3.9-2.2-6.3-.5 1-1.3 1.8-2 1.8s-1.5-.8-2-1.8z" fill="#f59e0b" stroke="#d97706" />
+                  <path d="M3 13.5c1.8 5.2 5.6 7 9 7s7.2-1.8 9-7H3z" fill="rgba(245, 158, 11, 0.3)" stroke="#d97706" />
+                </svg>
+              </div>
               <div class="verse-gujarati">
                 "સુખ, શાંતિ, સમૃદ્ધિ અને ઉત્તમ સ્વાસ્થ્યની મંગલકામનાઓ સાથે<br />
                 આપને અને આપના સમગ્ર પરિવારને નૂતન વર્ષાભિનંદન!"
@@ -1329,19 +1374,37 @@
 
           <div class="standards-grid">
             <div class="standard-card">
-              <div class="card-icon-box icon-amber">🪔</div>
+              <div class="card-icon-box icon-amber" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2c-.6 2.4-2.2 4.3-2.2 6.3a4.2 4.2 0 0 0 8.4 0c0-2-1.6-3.9-2.2-6.3-.5 1-1.3 1.8-2 1.8s-1.5-.8-2-1.8z" fill="#f59e0b" stroke="#d97706" />
+                  <path d="M3 13.5c1.8 5.2 5.6 7 9 7s7.2-1.8 9-7H3z" fill="rgba(245, 158, 11, 0.25)" stroke="#d97706" />
+                  <line x1="8" y1="21" x2="16" y2="21" stroke="#d97706" stroke-width="2" />
+                </svg>
+              </div>
               <h3>નવા વર્ષની શુભ શરૂઆત</h3>
               <p>Bestu Varas marks the auspicious dawn of fresh ledgers, clean architectural slates, and ambitious dreams. May this year inspire prosperity and creative breakthroughs.</p>
             </div>
 
             <div class="standard-card">
-              <div class="card-icon-box icon-cyan">⚡</div>
+              <div class="card-icon-box icon-cyan" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="rgba(2, 132, 199, 0.2)" stroke="#0284c7" />
+                </svg>
+              </div>
               <h3>High Performance &amp; Scalability</h3>
               <p>Just as the new year brings clarity and momentum, we wish your web platforms and digital initiatives sub-second speeds, zero downtime, and world-class resilience.</p>
             </div>
 
             <div class="standard-card">
-              <div class="card-icon-box icon-indigo">🤝</div>
+              <div class="card-icon-box icon-indigo" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m11 17 2 2a1 1 0 0 0 1.4 0l4.3-4.3a1 1 0 0 0 0-1.4l-2.6-2.6a1 1 0 0 0-1.4 0L13 12.4" />
+                  <path d="m18 11 3.3-3.3a1 1 0 0 0 0-1.4l-2.6-2.6a1 1 0 0 0-1.4 0L14 7" />
+                  <path d="m2 14 4.3 4.3a1 1 0 0 0 1.4 0l2.6-2.6a1 1 0 0 0 0-1.4L8.6 12.6" />
+                  <path d="M7 9 3.7 12.3a1 1 0 0 0 0 1.4l2.6 2.6a1 1 0 0 0 1.4 0L10 14" />
+                  <path d="m9 11 3-3 2 2-3 3" fill="rgba(99, 102, 241, 0.2)" />
+                </svg>
+              </div>
               <h3>Engineering Partnership</h3>
               <p>Built on honesty, craftsmanship, and senior developer collaboration. We extend our heartfelt gratitude to every client and partner who builds the digital future with us.</p>
             </div>
@@ -1398,14 +1461,22 @@
 
     <!-- Toast Notification -->
     <div class="toast-popup" id="toast-notification" role="status" aria-live="polite">
-      <span>✨</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2v4m0 12v4M2 12h4m12 0h4m-3.17-6.83l-2.83 2.83M7 17l-2.83 2.83m0-12.83L7 7m10 10l2.83 2.83"></path>
+      </svg>
       <span id="toast-text">Greeting link copied to clipboard!</span>
     </div>
 
     <!-- Floating Quick Audio Dock -->
     <div class="crackles-dock">
       <button type="button" class="dock-btn" id="dock-sound-btn" title="Toggle audio">
-        <span id="dock-sound-icon">🔈</span>
+        <span id="dock-sound-icon" style="display:inline-flex;align-items:center;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </span>
         <span>Sound</span>
       </button>
     </div>
@@ -1658,18 +1729,21 @@
       const dockSoundBtn = document.getElementById('dock-sound-btn');
       const dockSoundIcon = document.getElementById('dock-sound-icon');
 
+      const svgSoundOff = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>`;
+      const svgSoundOn = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>`;
+
       function updateSoundUI() {
         if (soundEnabled) {
-          soundIcon.textContent = '🔊';
+          soundIcon.innerHTML = svgSoundOn;
           soundLabel.textContent = 'Sound On';
           soundToggleBtn.classList.add('active');
-          dockSoundIcon.textContent = '🔊';
+          dockSoundIcon.innerHTML = svgSoundOn;
           dockSoundBtn.classList.add('active');
         } else {
-          soundIcon.textContent = '🔈';
+          soundIcon.innerHTML = svgSoundOff;
           soundLabel.textContent = 'Sound Off';
           soundToggleBtn.classList.remove('active');
-          dockSoundIcon.textContent = '🔈';
+          dockSoundIcon.innerHTML = svgSoundOff;
           dockSoundBtn.classList.remove('active');
         }
       }
@@ -1679,9 +1753,9 @@
         if (soundEnabled) {
           getAudioContext();
           playCrackleSound(1);
-          showToast('🔊 Crackle sound enabled!');
+          showToast('Crackle sound enabled!');
         } else {
-          showToast('🔈 Sound muted.');
+          showToast('Sound muted.');
         }
         updateSoundUI();
       }
@@ -1779,7 +1853,7 @@
             document.body.removeChild(el);
           }
           copyBtnText.textContent = 'Link Copied!';
-          showToast('✅ Personalized greeting link copied to clipboard!');
+          showToast('Personalized greeting link copied to clipboard!');
           setTimeout(() => {
             copyBtnText.textContent = 'Copy Greeting Link';
           }, 2500);
