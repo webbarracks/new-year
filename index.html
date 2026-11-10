@@ -455,20 +455,39 @@
     .hero-calendar-pill {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
+      gap: 12px;
       margin-bottom: 1.75rem;
-      padding: 6px 14px;
+      padding: 8px 18px;
       border-radius: var(--radius-full);
       background: #ffffff;
       border: 1px solid var(--border-subtle);
       font-size: 0.85rem;
       color: var(--text-secondary);
       box-shadow: 0 1px 4px rgba(15, 23, 42, 0.05);
+      max-width: 95vw;
     }
 
-    .hero-calendar-pill strong {
+    .calendar-pill-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .calendar-pill-item strong {
       color: #0284c7;
       font-weight: 600;
+    }
+
+    .calendar-pill-item .pill-sub {
+      color: var(--text-muted);
+      font-size: 0.8125rem;
+    }
+
+    .calendar-pill-sep {
+      opacity: 0.4;
+      font-size: 0.85rem;
     }
 
     .hero-description {
@@ -610,23 +629,37 @@
       background: #fffbeb;
       border: 1px dashed rgba(245, 158, 11, 0.45);
       border-radius: var(--radius-md);
-      padding: 1.25rem 1.5rem;
+      padding: 2.1rem 1.5rem 1.5rem 1.5rem;
       margin-bottom: 1.75rem;
       position: relative;
     }
 
     .verse-ornament {
       position: absolute;
-      top: -12px;
+      top: -15px;
       left: 50%;
       transform: translateX(-50%);
       background: #fef3c7;
-      border: 1px solid rgba(245, 158, 11, 0.35);
+      border: 1px solid rgba(245, 158, 11, 0.4);
       border-radius: var(--radius-full);
-      padding: 0 12px;
-      font-size: 0.9rem;
-      color: #b45309;
-      font-weight: 600;
+      padding: 4px 14px;
+      font-size: 0.8125rem;
+      color: #92400e;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15);
+      z-index: 2;
+    }
+
+    .verse-ornament svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      display: block;
     }
 
     .verse-gujarati {
@@ -1218,11 +1251,18 @@
         font-size: 0.72rem;
       }
       .hero-calendar-pill {
+        flex-direction: column;
+        gap: 5px;
+        padding: 9px 16px;
+        border-radius: var(--radius-md);
         max-width: 92vw;
-        padding: 7px 12px;
-        font-size: 0.78rem;
-        line-height: 1.5;
-        text-align: center;
+      }
+      .calendar-pill-sep {
+        display: none !important;
+      }
+      .calendar-pill-item {
+        font-size: 0.8125rem;
+        white-space: nowrap;
       }
 
       /* Hero Buttons */
@@ -1241,6 +1281,19 @@
       /* Greeting Banner */
       .greeting-card {
         padding: 1.5rem 1rem;
+      }
+      .gujarati-verse-box {
+        padding: 2.2rem 0.85rem 1.25rem 0.85rem;
+      }
+      .verse-ornament {
+        top: -14px;
+        font-size: 0.75rem;
+        padding: 3px 12px;
+        gap: 5px;
+      }
+      .verse-gujarati {
+        font-size: 1.02rem;
+        line-height: 1.65;
       }
       .signature-row {
         flex-direction: column;
@@ -1371,9 +1424,17 @@
         </div>
 
         <div class="hero-calendar-pill">
-          <span>Calendar: <strong>વિક્રમ સંવત ૨૦૮૧ (Vikram Samvat 2081)</strong></span>
-          <span>•</span>
-          <span>Today: <strong>બેસતું વર્ષ (Bestu Varas)</strong></span>
+          <div class="calendar-pill-item">
+            <span>Calendar:</span>
+            <strong>વિક્રમ સંવત ૨૦૮૧</strong>
+            <span class="pill-sub">(Vikram Samvat 2081)</span>
+          </div>
+          <span class="calendar-pill-sep">•</span>
+          <div class="calendar-pill-item">
+            <span>Today:</span>
+            <strong>બેસતું વર્ષ</strong>
+            <span class="pill-sub">(Bestu Varas)</span>
+          </div>
         </div>
 
         <p class="hero-description">
