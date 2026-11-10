@@ -207,17 +207,18 @@
     .announcement-bar {
       position: relative;
       z-index: 20;
-      background: rgba(255, 255, 255, 0.88);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-subtle);
       font-size: 0.8125rem;
-      padding: 0.6rem 1rem;
+      padding: 0.5rem 1rem;
       text-align: center;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.6rem;
       color: var(--text-secondary);
     }
 
@@ -225,7 +226,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 2px 9px;
+      padding: 3px 10px;
       border-radius: var(--radius-full);
       background: rgba(245, 158, 11, 0.12);
       border: 1px solid rgba(245, 158, 11, 0.35);
@@ -234,6 +235,8 @@
       font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.03em;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .badge-live-pulse {
@@ -243,6 +246,7 @@
       background-color: var(--accent-amber);
       box-shadow: 0 0 8px var(--accent-amber);
       animation: pulseDot 1.8s infinite ease-in-out;
+      flex-shrink: 0;
     }
 
     @keyframes pulseDot {
@@ -877,11 +881,13 @@
       background: #ffffff;
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
-      padding: 2rem;
+      padding: clamp(1.5rem, 4vw, 2rem);
       position: relative;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       display: flex;
       flex-direction: column;
+      align-items: center;
+      text-align: center;
       box-shadow: var(--shadow-sm);
     }
 
@@ -893,23 +899,25 @@
     }
 
     .card-icon-box {
-      width: 48px;
-      height: 48px;
+      width: 52px;
+      height: 52px;
       border-radius: var(--radius-md);
       display: grid;
       place-items: center;
-      margin-bottom: 1.25rem;
+      margin: 0 auto 1.25rem auto;
       transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      flex-shrink: 0;
     }
 
     .card-icon-box svg {
-      width: 24px;
-      height: 24px;
+      width: 26px;
+      height: 26px;
       display: block;
+      margin: auto;
     }
 
     .standard-card:hover .card-icon-box {
-      transform: scale(1.08);
+      transform: scale(1.1);
     }
 
     .icon-amber {
@@ -1141,6 +1149,133 @@
     .dock-btn.active {
       color: #d97706;
     }
+
+    /* ==========================================================================
+       Comprehensive Responsive Mobile Styles
+       ========================================================================== */
+    @media (max-width: 640px) {
+      /* Announcement Bar */
+      .announcement-bar {
+        font-size: 0.75rem;
+        padding: 0.45rem 0.75rem;
+        gap: 0.4rem;
+        line-height: 1.4;
+      }
+      .announcement-divider,
+      .announcement-link {
+        display: none !important;
+      }
+      .announcement-title {
+        font-size: 0.75rem;
+      }
+
+      /* Navbar */
+      .site-header {
+        top: 0.5rem;
+        padding: 0 0.65rem;
+        margin-bottom: 1.25rem;
+      }
+      .nav-bar {
+        height: 52px;
+        padding: 0 0.75rem;
+      }
+      .brand-logo {
+        gap: 0.5rem;
+      }
+      .brand-mark {
+        width: 30px;
+        height: 30px;
+      }
+      .brand-name {
+        font-size: 1.05rem;
+      }
+      .nav-actions {
+        gap: 0.4rem;
+      }
+      .control-pill {
+        width: 34px;
+        height: 34px;
+        padding: 0;
+        justify-content: center;
+        border-radius: var(--radius-full);
+      }
+      .control-pill #sound-label {
+        display: none !important;
+      }
+      .btn-main-site {
+        padding: 0.38rem 0.75rem;
+        font-size: 0.75rem;
+        white-space: nowrap;
+      }
+
+      /* Hero Badges & Pills */
+      .hero-badge-wrap {
+        padding: 5px 12px;
+        gap: 6px;
+        max-width: 92vw;
+      }
+      .hero-badge-text {
+        font-size: 0.72rem;
+      }
+      .hero-calendar-pill {
+        max-width: 92vw;
+        padding: 7px 12px;
+        font-size: 0.78rem;
+        line-height: 1.5;
+        text-align: center;
+      }
+
+      /* Hero Buttons */
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        margin-inline: auto;
+        gap: 0.75rem;
+      }
+      .hero-actions .btn {
+        width: 100%;
+        padding: 0.75rem 1.25rem;
+      }
+
+      /* Greeting Banner */
+      .greeting-card {
+        padding: 1.5rem 1rem;
+      }
+      .signature-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+      .sign-info {
+        text-align: center;
+      }
+
+      /* Centered Cards & Icons */
+      .standard-card {
+        text-align: center !important;
+        align-items: center !important;
+        padding: 1.5rem 1.25rem;
+      }
+      .card-icon-box {
+        margin: 0 auto 1.25rem auto !important;
+      }
+
+      /* Hide redundant bottom floating dock on mobile since sticky nav has sound toggle */
+      .crackles-dock {
+        display: none !important;
+      }
+
+      /* Social share buttons stack full width */
+      .share-buttons-row {
+        flex-direction: column;
+        width: 100%;
+      }
+      .share-buttons-row .btn-share {
+        width: 100%;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1163,9 +1298,9 @@
         <span class="badge-live-pulse"></span>
         VIKRAM SAMVAT 2081
       </span>
-      <span>આજે બેસતું વર્ષ • New Year (Bestu Varas) Celebrations</span>
-      <span style="opacity: 0.5;">|</span>
-      <a href="https://www.webbarracks.com/" target="_blank" rel="noopener" style="color: #0284c7; text-decoration: none; font-weight: 500;">
+      <span class="announcement-title">આજે બેસતું વર્ષ • New Year (Bestu Varas) Celebrations</span>
+      <span class="announcement-divider" style="opacity: 0.5;">|</span>
+      <a href="https://www.webbarracks.com/" target="_blank" rel="noopener" class="announcement-link" style="color: #0284c7; text-decoration: none; font-weight: 500;">
         Web Barracks Official ↗
       </a>
     </aside>
